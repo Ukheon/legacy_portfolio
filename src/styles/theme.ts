@@ -1,17 +1,10 @@
 export const theme = {
 	width: {
-		section: "1000px",
-		table: "1000px",
-		sideBar: "230px",
-		mainMargin: "100px",
-		button: "100px",
+		mobile: "600px",
+		tablet: "1200px",
 	},
 	height: {
-		header: "80px",
-		topMargin: "80px",
-		button: "35px",
-		table: "40px",
-		input: "45px",
+		header: "4.5rem",
 	},
 	colors: {},
 	grayColors: {
@@ -26,21 +19,23 @@ export const theme = {
 		gray900: "#23282c",
 	},
 	bgColors: {
-		sideBar: "#2f2e33",
+		root: "#151515",
+		temp: "#f1f0f5",
 	},
-	brandColors: {
-		name: "#20a8d8",
-		success: "#4dbd74",
-		danger: "#f85032",
-		button: "#3b94ee",
+	margin: {
+		header: "6rem",
+		nav: "1.5rem",
 	},
 	size: {
-		title: "1.8em",
+		h1: "1.5rem",
+		h2: "1.25rem",
+		logo: "30px",
+		nav: "16px",
 	},
 };
 
-export type brandColors = typeof theme.brandColors;
 export type colors = typeof theme.colors;
+export type margin = typeof theme.margin;
 export type grayColors = typeof theme.grayColors;
 export type bgColors = typeof theme.bgColors;
 export type size = typeof theme.size;

@@ -1,23 +1,24 @@
-import { Snowflake } from "@/components/Snowflake";
 import styled from "styled-components";
+import { Header } from "@/components/Header";
+import { Intro } from "@/components/Intro";
 
 export const Home = () => {
 	return (
-		<MainStyled>
-			<Snowflake />
-		</MainStyled>
+		<RootStyled>
+			<Header />
+			<MainStyled id='home'>
+				<Intro />
+			</MainStyled>
+		</RootStyled>
 	);
 };
 
-const MainStyled = styled.main`
-	width: 100vw;
-	color: white;
-	background: #1d1d1d;
-	height: 100vh;
+const RootStyled = styled.div`
+	width: 100%;
+	height: 2000px;
+	background: ${(props) => props.theme.bgColors.root};
 `;
 
-const IntroStyled = styled.div`
-	font-size: 24px;
-
-	font-weight: 800;
+const MainStyled = styled.main`
+	height: 700px;
 `;

@@ -31,7 +31,7 @@ module.exports = {
 
 		// *AutoFix 가능
 		// 사용하지 않는 변수가 존재해도 신경쓰지않음, extends 기능에 error로 명시되어있음.
-		"no-unused-vars": "warn",
+		"no-unused-vars": "off",
 
 		// 조건이 항상 같을경우 warning, Loop 안에선 무시.
 		"no-constant-condition": ["warn", { checkLoops: false }],

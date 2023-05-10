@@ -1,14 +1,14 @@
-import 'styled-components';
-import { colors, brandColors, size, width, height, bgColors, grayColors } from './theme';
+import "styled-components";
+import { colors, size, width, height, bgColors, grayColors, margin } from "./theme";
 
-declare module 'styled-components' {
-    export interface DefaultTheme {
-        width: width;
-        height: height;
-        colors: colors;
-        grayColors: grayColors;
-        bgColors: bgColors;
-        brandColors: brandColors;
-        size: size;
-    }
+declare module "styled-components" {
+	export interface DefaultTheme {
+		width: width;
+		height: height;
+		colors: colors;
+		grayColors: grayColors;
+		bgColors: bgColors;
+		size: size;
+		margin: margin;
+	}
 }
