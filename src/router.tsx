@@ -1,4 +1,4 @@
-import { Home } from "@/pages/Home";
+import { HomePage } from "@/pages/HomePage";
 import { Router as RemixRouter } from "@remix-run/router/dist/router";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -14,7 +14,7 @@ const routerData: RouterBase[] = [
 		id: 0,
 		path: "/",
 		label: "Home",
-		element: <Home />,
+		element: <HomePage />,
 	},
 ];
 

@@ -17,9 +17,23 @@ export const Snowflake = () => {
 };
 
 const fall = keyframes`
-	from {
+	0% {
+		opacity: 0.5;
 	}
-	to {
+
+	25% {
+		opacity: 0.75;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	75% {
+		opacity: 0.5
+	}
+
+	100% {
 		transform: translateY(100vh);
 		opacity: 0;
 	}
@@ -27,11 +41,13 @@ const fall = keyframes`
 `;
 
 const SnowStyled = styled.div<{ position: string; delay: string }>`
+	z-index: 9999;
 	position: absolute;
-	top: ${(props) => props.theme.height.header};
+	top: 0;
 	width: 10px;
 	height: 10px;
 	border-radius: 50%;
+	opacity: 0;
 	left: ${({ position }) => position};
 	animation: ${fall} 20s infinite;
 	animation-delay: ${({ delay }) => delay};
