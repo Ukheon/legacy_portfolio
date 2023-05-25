@@ -5,7 +5,6 @@ export const Footer = () => {
 };
 
 const FooterSectionStyled = styled.footer`
-	width: 100vw;
 	height: 7.5rem;
 	line-height: 7.5rem;
 	font-size: 0.8rem;

@@ -23,7 +23,6 @@ export const HomePage = () => {
 
 const RootStyled = styled.div`
 	width: 100%;
-	overflow: visible;
 	background: ${(props) => props.theme.bgColors.root};
 `;
 

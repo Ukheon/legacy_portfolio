@@ -20,6 +20,9 @@ export const theme = {
 		logo: "30px",
 		nav: "16px",
 	},
+	responsive: {
+		stackArticle: "1100px",
+	},
 };
 
 export type colors = typeof theme.colors;
@@ -28,3 +31,4 @@ export type bgColors = typeof theme.bgColors;
 export type size = typeof theme.size;
 export type width = typeof theme.width;
 export type height = typeof theme.height;
+export type responsive = typeof theme.responsive;

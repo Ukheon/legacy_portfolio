@@ -4,9 +4,14 @@ export const PROJECT_DATA = [
 		subtitle: "개인프로젝트",
 		content:
 			"React + Styled-Components를 이용해 만든 포트폴리오 웹사이트 입니다. 모든 환경에서 사용 가능하게 반응형웹으로 제작했습니다.",
-		detail: "",
+		detail: "dd",
 		regrert: "dd",
-		imageUrl: ["./src/assets/test.png", "./src/assets/test.png", "./src/assets/profile.jpg", "./src/assets/test.png"],
+		imageUrl: [
+			"./src/assets/portfolio1.png",
+			"./src/assets/portfolio2.png",
+			"./src/assets/portfolio3.png",
+			"./src/assets/portfolio4.png",
+		],
 		tags: ["React", "Typescript", "Styled-Components", "반응형웹"],
 		links: [
 			{

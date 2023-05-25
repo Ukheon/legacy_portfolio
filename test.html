@@ -6,30 +6,75 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Document</title>
 		<style>
-			#container {
-				display: grid;
-				grid-template-columns: 1fr 1fr 1fr;
+			.container {
+				width: 500px;
+				height: 50px;
+				overflow: hidden;
 			}
-			span {
-				width: 200px;
-				height: 200px;
-				background-color: red;
-				border: 1px solid black;
+
+			.box {
+				width: 30px;
+				height: 30px;
+				display: inline-block;
+				margin-right: 10px;
+				background-color: blue;
+				color: white;
+				text-align: center;
+				line-height: 30px;
+				transition: transform 1s;
+			}
+
+			.visible {
+				transform: translateX(-100%);
 			}
 		</style>
 	</head>
 	<body>
-		<div id="container">
-			<span style="grid-column: 1 / 3; grid-row: 1 / 3">아이템1</span>
-			<span>아이템2</span>
-			<span>아이템3</span>
-			<span>아이템4</span>
-			<span>아이템5</span>
-			<span>아이템6</span>
-			<span>아이템7</span>
-			<span>아이템8</span>
-			<span>아이템9</span>
-			<span>아이템10</span>
+		<div class="container">
+			<div class="box">1</div>
+			<div class="box">2</div>
+			<div class="box">3</div>
+			<div class="box">4</div>
+			<div class="box">5</div>
+			<div class="box">6</div>
+			<div class="box">7</div>
+			<div class="box">8</div>
+			<div class="box">9</div>
+			<div class="box">10</div>
 		</div>
 	</body>
+	<script>
+		function moveBoxes() {
+			const boxes = document.getElementsByClassName("box");
+			const container = document.querySelector(".container");
+
+			container.addEventListener("transitionend", function () {
+				const firstBox = container.children[0];
+				container.appendChild(firstBox);
+				container.style.transition = "none";
+				container.style.transform = "translateX(0)";
+				setTimeout(function () {
+					container.style.transition = "transform 1s";
+				}, 0);
+			});
+
+			setInterval(function () {
+				const visibleBox = document.querySelector(".visible");
+				if (visibleBox) {
+					visibleBox.classList.remove("visible");
+					const nextBox = visibleBox.nextElementSibling;
+					if (nextBox) {
+						nextBox.classList.add("visible");
+					} else {
+						boxes[0].classList.add("visible");
+					}
+				} else {
+					boxes[0].classList.add("visible");
+				}
+				container.style.transform = "translateX(-100%)";
+			}, 2000);
+		}
+
+		moveBoxes();
+	</script>
 </html>

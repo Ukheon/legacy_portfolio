@@ -10,7 +10,11 @@ export const useProjectSet = () => {
 		setAnimate(true);
 	}, [selectImg]);
 
-	const handleExpandToggle = () => setExpandImageToggle((state) => !state);
+	const handleExpandToggle = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
+		e.stopPropagation();
+		setExpandImageToggle((state) => !state);
+		console.log("here");
+	};
 
 	const handleSubImageClick = (idx: number) => setSelectImg(idx);
 

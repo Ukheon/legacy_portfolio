@@ -6,7 +6,7 @@ export const Title = ({ title }: { title: string }) => {
 
 const TitleStyled = styled.h1`
 	max-width: ${(props) => props.theme.width.section};
-	margin-top: 6rem;
+	padding-top: 6rem;
 	margin-bottom: 3rem;
 
 	@media (max-width: ${(props) => `calc(${props.theme.width.section} + 4rem)`}) {

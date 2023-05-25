@@ -1,10 +1,8 @@
-import React, { VoidFunctionComponent, useEffect, useState } from "react";
 import styled, { css, keyframes } from "styled-components";
 import arrowImg from "@/assets/arrow.png";
 import { useProjectSet } from "@/hooks/useProjectSet";
-import { Link } from "react-router-dom";
 import { LinkButton } from "./LinkButton";
-import { Pagination } from "./Pagination";
+import { initAnimation, translateYAnimation } from "@/styles/animation";
 
 export interface ILink {
 	href: string;
@@ -28,16 +26,8 @@ interface IProps {
 	current: number;
 	nextCurrent: () => void;
 	prevCurrent: () => void;
+	isIntersection: boolean;
 }
-
-const initAnimation = keyframes`
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-`;
 
 const prevAnimation = keyframes`
 	0% {
@@ -63,7 +53,7 @@ const nextAnimation = keyframes`
 	}
 `;
 
-export const Project = ({ data, index, current, nextCurrent, prevCurrent }: IProps) => {
+export const Project = ({ data, index, current, nextCurrent, prevCurrent, isIntersection }: IProps) => {
 	const {
 		selectImg,
 		animate,
@@ -76,71 +66,95 @@ export const Project = ({ data, index, current, nextCurrent, prevCurrent }: IPro
 	} = useProjectSet();
 
 	return (
-		<ProjectStyled hidden={current !== index}>
-			<ImageSectionStyled>
-				<MainImageSectionStyled>
-					<MainImageStyled
-						className={animate ? "animate" : ""}
-						src={data.imageUrl[selectImg]}
-						alt={"thumbnail"}
-						onAnimationEnd={handleAnimationEnd}
-					/>
-					<HoverIconStyled onClick={handleExpandToggle} />
-					{expandImageToggle ? (
-						<>
-							<CloseBarStyled>
-								<img src={"./src/assets/close.png"} onClick={handleExpandToggle} />
-							</CloseBarStyled>
-							<ExpandMainImageStyled>
-								<img src={data.imageUrl[selectImg]} />
-							</ExpandMainImageStyled>
-						</>
-					) : (
-						""
-					)}
-				</MainImageSectionStyled>
-				<SubImageSectionStyled>
-					{data.imageUrl.map((imgUrl, idx) => {
-						return (
-							<SubImageFrameStyled key={idx} onClick={() => handleSubImageClick(idx)} active={selectImg === idx}>
-								<SubImageStyled src={imgUrl} />
-							</SubImageFrameStyled>
-						);
-					})}
-				</SubImageSectionStyled>
-			</ImageSectionStyled>
-			<InfoSectionStyled>
-				<TitleStyled>
-					{data.title}
-					<p>{data.subtitle}</p>
-				</TitleStyled>
-				<InfoStyled>
-					{data.content}
-					{data.detail !== "" && <DetailButtonStyled onClick={handleDetailButtonClick}>더보기</DetailButtonStyled>}
-				</InfoStyled>
-				<DetailInfoSectionStyled hidden={!showDetail}>
-					<p>···</p>
-					<div></div>
-				</DetailInfoSectionStyled>
-				<HashTagSectionStyled>
-					{data.tags.map((tag, idx) => {
-						return <HashTagStyled key={idx}>#{tag}</HashTagStyled>;
-					})}
-				</HashTagSectionStyled>
-				<LinkButton links={data.links} />
-			</InfoSectionStyled>
-			<PrevArrowStyled onClick={nextCurrent} />
-			<NextArrowStyled onClick={prevCurrent} />
-		</ProjectStyled>
+		<>
+			{expandImageToggle ? (
+				<ExpendSectionStyled onClick={(e) => handleExpandToggle(e)}>
+					<CloseBarStyled onClick={(e) => e.stopPropagation()}>
+						<img
+							src={"./src/assets/close.png"}
+							onClick={(e) => {
+								handleExpandToggle(e);
+								console.log("image 클릭");
+							}}
+						/>
+					</CloseBarStyled>
+					<ExpandMainImageStyled onClick={(e) => e.stopPropagation()}>
+						<img src={data.imageUrl[selectImg]} />
+					</ExpandMainImageStyled>
+				</ExpendSectionStyled>
+			) : (
+				""
+			)}
+			{isIntersection && (
+				<AnimationStyled>
+					<ProjectStyled hidden={current !== index}>
+						<ImageSectionStyled>
+							<MainImageSectionStyled>
+								<MainImageStyled
+									className={animate ? "animate" : ""}
+									src={data.imageUrl[selectImg]}
+									alt={"thumbnail"}
+									onAnimationEnd={handleAnimationEnd}
+								/>
+								<HoverIconStyled onClick={handleExpandToggle} />
+							</MainImageSectionStyled>
+							<SubImageSectionStyled>
+								{data.imageUrl.map((imgUrl, idx) => {
+									return (
+										<SubImageFrameStyled key={idx} onClick={() => handleSubImageClick(idx)} active={selectImg === idx}>
+											<SubImageStyled src={imgUrl} />
+										</SubImageFrameStyled>
+									);
+								})}
+							</SubImageSectionStyled>
+						</ImageSectionStyled>
+						<InfoSectionStyled>
+							<TitleStyled>
+								{data.title}
+								<p>{data.subtitle}</p>
+							</TitleStyled>
+							<InfoStyled>
+								{data.content}
+								{data.detail !== "" && <DetailButtonStyled onClick={handleDetailButtonClick}>더보기</DetailButtonStyled>}
+							</InfoStyled>
+							<DetailInfoSectionStyled hidden={!showDetail}>
+								<p>···</p>
+								<div dangerouslySetInnerHTML={{ __html: data.detail || "" }}></div>
+								<div>
+									{/* <h4>기술 선정 이유</h4>
+									생산성을 위해 React, Typescript, Styled-Components를 사용했습니다. css-in-js 방식이 개인적으로 알아보기
+									쉬워 Styled-component를 사용하여 UI작업을 했습니다.
+									<h4>어려운 점</h4>
+									한 페이지에서 모든 컨텐츠를 보여주는 과정이 익숙하지 않아 힘들었 */}
+								</div>
+							</DetailInfoSectionStyled>
+							<HashTagSectionStyled>
+								{data.tags.map((tag, idx) => {
+									return <HashTagStyled key={idx}>#{tag}</HashTagStyled>;
+								})}
+							</HashTagSectionStyled>
+							<LinkButton links={data.links} />
+						</InfoSectionStyled>
+						<PrevArrowStyled onClick={nextCurrent} />
+						<NextArrowStyled onClick={prevCurrent} />
+					</ProjectStyled>
+				</AnimationStyled>
+			)}
+		</>
 	);
 };
 
+const AnimationStyled = styled.div`
+	animation: ${translateYAnimation} 1s ease-in-out forwards;
+`;
+
 const ProjectStyled = styled.div`
+	animation: ${initAnimation} 0.5s ease-in-out forwards;
+
 	position: relative;
 	margin: 0 auto;
 	max-width: 900px;
 	width: 100%;
-	animation: ${initAnimation} ease-in-out 1s;
 `;
 
 const ImageSectionStyled = styled.section`
@@ -178,17 +192,27 @@ const HoverIconStyled = styled.img`
 const MainImageStyled = styled.img`
 	width: 100%;
 	&.animate {
-		animation: ${initAnimation} 0.3s linear;
+		animation: ${initAnimation} 0.3s ease-in-out;
 	}
 	&:hover {
 		filter: invert(20%);
 	}
 `;
 
+const ExpendSectionStyled = styled.article`
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	z-index: 2000;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.3);
+`;
+
 const CloseBarStyled = styled.div`
 	position: fixed;
 	z-index: 8000;
-	top: 10%;
+	top: calc(10% - 30px);
 	left: 50%;
 	transform: translate(-50%, 0);
 	background: red;
@@ -209,6 +233,16 @@ const CloseBarStyled = styled.div`
 		height: 20px;
 		background-repeat: no-repeat;
 		padding: 2.5px 2.5px;
+		&:hover {
+			filter: invert(100%);
+			background-color: green;
+		}
+	}
+
+	@media (max-width: 900px) {
+		top: 0px !important;
+		width: 100% !important;
+		transform: translate(-50%, 0%) !important;
 	}
 `;
 
@@ -216,16 +250,25 @@ const ExpandMainImageStyled = styled.div`
 	position: fixed;
 	width: 80vw;
 	height: 80vh;
-	overflow-y: scroll;
 	top: 50%;
 	left: 50%;
 	background-color: ${(props) => props.theme.bgColors.root};
 	box-shadow: 0 0 25px gray;
 	transform: translate(-50%, -50%);
-	z-index: 2000;
+	z-index: 7999;
 	cursor: auto;
+	display: flex;
+	overflow: auto;
+
+	@media (max-width: 900px) {
+		width: 100% !important;
+		height: calc(100% - 30px) !important;
+		top: 30px !important;
+		transform: translate(-50%, 0%) !important;
+	}
 	img {
-		width: 100%;
+		display: block;
+		margin: 0 auto;
 	}
 `;
 
@@ -356,11 +399,12 @@ const DetailInfoSectionStyled = styled.section`
 	> div {
 		h4 {
 			font-size: 1rem;
+			margin-top: 20px;
+			margin-bottom: 10px;
 			&::before {
 				content: "·";
 				margin-right: 5px;
 			}
-			margin-bottom: 10px;
 		}
 	}
 `;

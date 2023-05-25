@@ -1,12 +1,15 @@
 import { Snowflake } from "@/components/Snowflake";
 import { Title } from "@/components/Title";
+import { useObserver } from "@/hooks/useObserver";
 import { SectionLayout } from "@/layouts/SectionLayout";
 import styled from "styled-components";
 
 export const ContactPage = () => {
+	useObserver("contact");
+
 	return (
 		<ContactSection>
-			<Snowflake />
+			{/* <Snowflake /> */}
 			<SectionLayout id='contact' height={"70vh"}>
 				<Title title={"CONTACT"} />
 				<ContactSection>
@@ -19,6 +22,9 @@ export const ContactPage = () => {
 					<p>
 						<span>GITHUB </span> https://github.com/Ukheon
 					</p>
+					<p>
+						<span>PHONE </span> 010.7323.1620
+					</p>
 				</ContactSection>
 			</SectionLayout>
 		</ContactSection>
@@ -30,6 +36,8 @@ const ContactSection = styled.section`
 	background-color: transparent;
 	position: relative;
 	width: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
 	align-items: center;
 	> p {
 		background-color: transparent;
@@ -40,7 +48,7 @@ const ContactSection = styled.section`
 		position: relative;
 		padding-left: 30px;
 		> span {
-			width: 120px;
+			width: 110px;
 			display: inline-block;
 		}
 		&::before {

@@ -34,7 +34,7 @@ const fall = keyframes`
 	}
 
 	100% {
-		transform: translateY(100vh);
+		transform: translateY(70vh);
 		opacity: 0;
 	}
 

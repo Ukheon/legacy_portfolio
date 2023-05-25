@@ -1,5 +1,5 @@
 import "styled-components";
-import { colors, size, width, height, bgColors, margin } from "./theme";
+import { colors, size, width, height, bgColors, margin, responsive } from "./theme";
 
 declare module "styled-components" {
 	export interface DefaultTheme {
@@ -9,5 +9,6 @@ declare module "styled-components" {
 		bgColors: bgColors;
 		size: size;
 		margin: margin;
+		responsive: responsive;
 	}
 }

@@ -9,8 +9,10 @@ export const makeSnowflake = () => {
 	const textureArray = ["❄", "❅"];
 
 	for (let i = 0, limit = 30; i < limit; i++) {
+		const position = Math.random() * window.screen.width - 200 + "px";
+		console.log(position);
 		snowflakeArray[i] = {
-			position: Math.random() * window.screen.width + "px",
+			position: Math.random() * window.screen.width - 200 + "px",
 			delay: Math.random() * 25 + "s",
 			texture: textureArray[Math.floor((Math.random() * 10) % 2)],
 		};

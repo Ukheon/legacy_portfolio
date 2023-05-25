@@ -5,8 +5,11 @@ import { Project } from "../components/Project";
 import { useState } from "react";
 import { Pagination } from "@/components/Pagination";
 import { PROJECT_DATA } from "@/data/project";
+import { useObserver } from "@/hooks/useObserver";
+import { translateYAnimation } from "@/styles/animation";
 
 export const ProjectPage = () => {
+	const { isIntersection } = useObserver("project");
 	const [current, setCurrent] = useState(0);
 
 	const changeCurrent = (target: number) => setCurrent(target);
@@ -31,7 +34,7 @@ export const ProjectPage = () => {
 
 	return (
 		<ProjectSecsionStyled>
-			<SectionLayout id='project' overflow={"true"}>
+			<SectionLayout id='project' overflow={"true"} height='70vh'>
 				<Title title='PROJECT' />
 				<ProjectStyled>
 					{PROJECT_DATA.map((data, idx) => {
@@ -43,11 +46,12 @@ export const ProjectPage = () => {
 								nextCurrent={nextCurrent}
 								prevCurrent={prevCurrent}
 								index={idx}
+								isIntersection={isIntersection}
 							/>
 						);
 					})}
+					<Pagination current={current} size={PROJECT_DATA.length} changeCurrent={changeCurrent} />
 				</ProjectStyled>
-				<Pagination current={current} size={PROJECT_DATA.length} changeCurrent={changeCurrent} />
 			</SectionLayout>
 		</ProjectSecsionStyled>
 	);

@@ -22,7 +22,6 @@ export default createGlobalStyle`
 
 	body {
 		font-family: sans-serif;
-		overflow-x: hidden;
 		overflow-y: scroll;
 
 		background-color: ${(props) => props.theme.bgColors.root};
