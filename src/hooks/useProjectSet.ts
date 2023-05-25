@@ -13,7 +13,6 @@ export const useProjectSet = () => {
 	const handleExpandToggle = (e: React.MouseEvent<HTMLElement, MouseEvent>) => {
 		e.stopPropagation();
 		setExpandImageToggle((state) => !state);
-		console.log("here");
 	};
 
 	const handleSubImageClick = (idx: number) => setSelectImg(idx);

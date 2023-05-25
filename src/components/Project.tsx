@@ -73,7 +73,6 @@ export const Project = ({ data, index, current, nextCurrent, prevCurrent, isInte
 							src={"/assets/close.png"}
 							onClick={(e) => {
 								handleExpandToggle(e);
-								console.log("image 클릭");
 							}}
 						/>
 					</CloseBarStyled>

@@ -24,7 +24,6 @@ export const ProjectPage = () => {
 
 	const prevCurrent = () => {
 		setCurrent((select) => {
-			console.log("here?");
 			if (select === 0) {
 				return PROJECT_DATA.length - 1;
 			}
