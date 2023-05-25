@@ -856,7 +856,7 @@ Error generating stack: `+i.message+`
 `,Wx=()=>v.jsxs(Vx,{children:[v.jsx(zS,{}),v.jsxs(Qx,{children:[v.jsx(ZS,{}),v.jsx(Ix,{}),v.jsx(Ux,{}),v.jsx(Dx,{})]}),v.jsx(Fx,{})]}),Vx=W.div`
 	width: 100%;
 	background: ${e=>e.theme.bgColors.root};
-`,Qx=W.main``,Yx=[{id:0,path:"/",label:"root",element:v.jsx(Wx,{})}],Kx=jy(Yx.map(e=>({path:e.path,element:e.element}))),Gx={width:{mobile:"600px",tablet:"1200px",section:"1100px"},height:{header:"4.5rem"},colors:{},bgColors:{root:"#151515",temp:"#f1f0f5"},margin:{header:"6rem",nav:"1.5rem"},size:{logo:"30px",nav:"16px"},responsive:{stackArticle:"1100px"}},Xx=$1`
+`,Qx=W.main``,Yx=[{id:0,path:"/",label:"root",element:v.jsx(Wx,{})}],Kx=jy(Yx.map(e=>({path:e.path,element:e.element})),{basename:"/portfolio"}),Gx={width:{mobile:"600px",tablet:"1200px",section:"1100px"},height:{header:"4.5rem"},colors:{},bgColors:{root:"#151515",temp:"#f1f0f5"},margin:{header:"6rem",nav:"1.5rem"},size:{logo:"30px",nav:"16px"},responsive:{stackArticle:"1100px"}},Xx=$1`
 	* {
 		margin: 0;
 		padding: 0;

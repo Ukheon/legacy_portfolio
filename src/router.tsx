@@ -24,5 +24,6 @@ export const routers: RemixRouter = createBrowserRouter(
 			path: router.path,
 			element: router.element,
 		};
-	})
+	}),
+	{ basename: "/portfolio" }
 );
