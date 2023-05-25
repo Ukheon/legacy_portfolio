@@ -5,7 +5,6 @@ import styled from "styled-components";
 export const Typing = ({ typingText }: { typingText: string }) => {
 	const [text, setText] = useState(""); // 타이핑할 텍스트 상태 관리
 	const [index, setIndex] = useState(0); // 현재 타이핑 중인 텍스트 인덱스 상태 관리
-
 	const typingSpeed = 100; // 타이핑 속도 (밀리초 단위)
 
 	useEffect(() => {
@@ -16,6 +15,7 @@ export const Typing = ({ typingText }: { typingText: string }) => {
 
 		return () => clearTimeout(timer);
 	}, [index]);
+
 	return <TextStyled>{text}</TextStyled>;
 };
 

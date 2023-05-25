@@ -1,5 +1,4 @@
 import styled, { css } from "styled-components";
-import menu from "@/assets/m_menu_button.svg";
 import { Link as Scroll } from "react-scroll";
 import { useState } from "react";
 
@@ -113,7 +112,7 @@ const MobileMenuButtonCSS = css`
 	width: 32px;
 	top: 0;
 	right: 0;
-	background-image: url("./src/assets/close.png");
+	background-image: url("/assets/close.png");
 	filter: invert(100%);
 	background-size: 20px;
 	margin-right: 2rem;
@@ -123,7 +122,7 @@ const MenuButtonStyled = styled.button<{ toggle: boolean }>`
 	display: none;
 	width: 32px;
 	height: ${(props) => props.theme.height.header};
-	background-image: url(${menu});
+	background-image: url("/assets/m_menu_button.svg");
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 32px;

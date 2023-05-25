@@ -1,40 +1,41 @@
 import { Title } from "@/components/Title";
 import { useObserver } from "@/hooks/useObserver";
 import { SectionLayout } from "@/layouts/SectionLayout";
+import { initAnimation, stackTranslateYAnimation } from "@/styles/animation";
 import styled from "styled-components";
 
 export const StackPage = () => {
-	useObserver("stack");
+	const { isIntersection } = useObserver("stack");
 
 	return (
 		<StackSectionStyled>
 			<SectionLayout id={"stack"} height='90vh'>
 				<Title title={"STACKS"} />
-				<SectionStyled>
+				<SectionStyled hidden={!isIntersection}>
 					<p>
 						<em>*</em>아이콘에 마우스를 올리면 자세한 설명이 나옵니다.
 					</p>
-					<SectionTitleStyled># FRONT-END SKILL</SectionTitleStyled>
-					<ArticleStyled>
-						<BoxStyled url={"./src/assets/html.png"}>
+					<SectionTitleStyled time={"1s"}># FRONT-END SKILL</SectionTitleStyled>
+					<ArticleStyled time={"1s"}>
+						<BoxStyled url={"/assets/html.png"}>
 							<BoxInfo>
 								<p>HTML</p>
 								<p>시멘틱 태그를 이용해 마크업 할 수 있습니다.</p>
 							</BoxInfo>
 						</BoxStyled>
-						<BoxStyled url={"./src/assets/css3.png"}>
+						<BoxStyled url={"/assets/css3.png"}>
 							<BoxInfo>
 								<p>CSS</p>
 								<p>flex, grid를 사용하여 반응형웹을 적용할 수 있습니다.</p>
 							</BoxInfo>
 						</BoxStyled>
-						<BoxStyled url={"./src/assets/js.png"}>
+						<BoxStyled url={"/assets/js.png"}>
 							<BoxInfo>
 								<p>JavaScript</p>
 								<p>ES6 문법에 익숙하고, DOM을 이해하며 SPA를 구축 할 수 있습니다.</p>
 							</BoxInfo>
 						</BoxStyled>
-						<BoxStyled url={"./src/assets/typescript.png"}>
+						<BoxStyled url={"/assets/typescript.png"}>
 							<BoxInfo>
 								<p>TypeScript</p>
 								<p>
@@ -43,34 +44,34 @@ export const StackPage = () => {
 								</p>
 							</BoxInfo>
 						</BoxStyled>
-						<BoxStyled url={"./src/assets/reactjs.png"}>
+						<BoxStyled url={"/assets/reactjs.png"}>
 							<BoxInfo>
 								<p>React</p>
 								<p>범용적이고 재사용 가능한 컴포넌트 설계가 가능합니다. hook, redux를 사용해 상태관리를 할 수 있습니다.</p>
 							</BoxInfo>
 						</BoxStyled>
-						<BoxStyled url={"./src/assets/jquery.png"}>
+						<BoxStyled url={"/assets/jquery.png"}>
 							<BoxInfo>
 								<p>jQuery</p>
 								<p>DOM 조작하는 메소드에 익숙하며 slick, date-picker 라이브러리를 사용해본 경험이 있습니다.</p>
 							</BoxInfo>
 						</BoxStyled>
 					</ArticleStyled>
-					<SectionTitleStyled># DEV-OPS SKILL</SectionTitleStyled>
-					<ArticleStyled>
-						<BoxStyled url={"./src/assets/jira.png"}>
+					<SectionTitleStyled time={"1.8s"}># DEV-OPS SKILL</SectionTitleStyled>
+					<ArticleStyled time={"1.8s"}>
+						<BoxStyled url={"/assets/jira.png"}>
 							<BoxInfo>
 								<p>Jira</p>
 								<p>Jira를 사용하여 작업의 우선순위를 관리하고, 이슈를 관리할 수 있습니다.</p>
 							</BoxInfo>
 						</BoxStyled>
-						<BoxStyled url={"./src/assets/bitbucket.png"}>
+						<BoxStyled url={"/assets/bitbucket.png"}>
 							<BoxInfo>
 								<p>Bitbucket</p>
 								<p>Jira와 함께 사용해 이슈를 연동하고 소스코드를 관리할 수 있습니다.</p>
 							</BoxInfo>
 						</BoxStyled>
-						<BoxStyled url={"./src/assets/aws.png"}>
+						<BoxStyled url={"/assets/aws.png"}>
 							<BoxInfo>
 								<p>AWS</p>
 								<p>
@@ -79,7 +80,7 @@ export const StackPage = () => {
 								</p>
 							</BoxInfo>
 						</BoxStyled>
-						<BoxStyled url={"./src/assets/vscode.png"}>
+						<BoxStyled url={"/assets/vscode.png"}>
 							<BoxInfo>
 								<p>vsCode</p>
 								<p>범용적이고 재사용 가능한 컴포넌트 설계가 가능합니다. redux를 사용해 세션유지한 경험이 있습니다.</p>
@@ -99,6 +100,7 @@ const StackSectionStyled = styled.section`
 `;
 
 const SectionStyled = styled.section`
+	animation: ${initAnimation} 1.5s forwards;
 	> p {
 		margin-top: 80px;
 		margin-bottom: 70px;
@@ -107,6 +109,8 @@ const SectionStyled = styled.section`
 			margin-right: 5px;
 		}
 	}
+	> article {
+	}
 	@media (max-width: ${(props) => props.theme.responsive.stackArticle}) {
 		> p {
 			display: none;
@@ -114,10 +118,11 @@ const SectionStyled = styled.section`
 	}
 `;
 
-const SectionTitleStyled = styled.span`
+const SectionTitleStyled = styled.span<{ time: string }>`
 	display: inline-block;
 	height: 41px;
 	line-height: 40px;
+	opacity: 0;
 	color: white;
 	border: 1px solid black;
 	box-sizing: border-box;
@@ -126,15 +131,20 @@ const SectionTitleStyled = styled.span`
 	padding: 0 25px;
 	background-color: rgba(0, 0, 0, 0.3);
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+	animation: ${stackTranslateYAnimation} 1.5s forwards;
+	animation-delay: ${({ time }) => time};
 `;
 
-const ArticleStyled = styled.article`
+const ArticleStyled = styled.article<{ time: string }>`
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
 	margin: 40px 0;
 	min-height: 130px;
 	flex-flow: wrap;
+	opacity: 0;
+	animation: ${stackTranslateYAnimation} 1.5s forwards;
+	animation-delay: ${({ time }) => time};
 
 	@media (max-width: ${(props) => props.theme.responsive.stackArticle}) {
 		display: grid;
@@ -200,7 +210,7 @@ const BoxStyled = styled.div<{ url: string }>`
 				width: 100px;
 				height: 100%;
 				opacity: 0;
-				animation: moveRight 0.3s;
+				animation: moveRight 0.2s;
 			}
 		}
 	}

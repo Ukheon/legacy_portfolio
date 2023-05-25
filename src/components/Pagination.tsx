@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Link as Scroll } from "react-scroll";
 export const Pagination = ({
 	current,
 	size,
@@ -15,7 +15,9 @@ export const Pagination = ({
 		<PaginationStyled>
 			{pagiArray.map((_, idx) => {
 				return (
-					<CircleStyled key={idx} className={idx === current ? "active" : ""} onClick={() => changeCurrent(idx)}></CircleStyled>
+					<Scroll key={idx} to='project' offset={100}>
+						<CircleStyled className={idx === current ? "active" : ""} onClick={() => changeCurrent(idx)}></CircleStyled>
+					</Scroll>
 				);
 			})}
 		</PaginationStyled>

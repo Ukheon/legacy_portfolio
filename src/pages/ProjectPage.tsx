@@ -6,7 +6,6 @@ import { useState } from "react";
 import { Pagination } from "@/components/Pagination";
 import { PROJECT_DATA } from "@/data/project";
 import { useObserver } from "@/hooks/useObserver";
-import { translateYAnimation } from "@/styles/animation";
 
 export const ProjectPage = () => {
 	const { isIntersection } = useObserver("project");
@@ -25,6 +24,7 @@ export const ProjectPage = () => {
 
 	const prevCurrent = () => {
 		setCurrent((select) => {
+			console.log("here?");
 			if (select === 0) {
 				return PROJECT_DATA.length - 1;
 			}

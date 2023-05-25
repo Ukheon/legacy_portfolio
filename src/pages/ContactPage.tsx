@@ -1,18 +1,17 @@
-import { Snowflake } from "@/components/Snowflake";
 import { Title } from "@/components/Title";
 import { useObserver } from "@/hooks/useObserver";
 import { SectionLayout } from "@/layouts/SectionLayout";
+import { initAnimation } from "@/styles/animation";
 import styled from "styled-components";
 
 export const ContactPage = () => {
-	useObserver("contact");
+	const { isIntersection } = useObserver("contact");
 
 	return (
-		<ContactSection>
-			{/* <Snowflake /> */}
+		<div>
 			<SectionLayout id='contact' height={"70vh"}>
 				<Title title={"CONTACT"} />
-				<ContactSection>
+				<ContactSection hidden={!isIntersection}>
 					<p>
 						<span>LOCATION</span> 서울시 성동구
 					</p>
@@ -27,11 +26,12 @@ export const ContactPage = () => {
 					</p>
 				</ContactSection>
 			</SectionLayout>
-		</ContactSection>
+		</div>
 	);
 };
 
 const ContactSection = styled.section`
+	animation: ${initAnimation} 1.5s forwards;
 	background-repeat: no-repeat;
 	background-color: transparent;
 	position: relative;

@@ -1,8 +1,8 @@
 import styled, { css, keyframes } from "styled-components";
-import arrowImg from "@/assets/arrow.png";
 import { useProjectSet } from "@/hooks/useProjectSet";
 import { LinkButton } from "./LinkButton";
 import { initAnimation, translateYAnimation } from "@/styles/animation";
+import { Link as Scroll } from "react-scroll";
 
 export interface ILink {
 	href: string;
@@ -14,7 +14,6 @@ interface IProjectData {
 	subtitle: string;
 	content: string;
 	detail: string | null;
-	regrert: string;
 	imageUrl: string[];
 	tags: string[];
 	links: ILink[];
@@ -71,7 +70,7 @@ export const Project = ({ data, index, current, nextCurrent, prevCurrent, isInte
 				<ExpendSectionStyled onClick={(e) => handleExpandToggle(e)}>
 					<CloseBarStyled onClick={(e) => e.stopPropagation()}>
 						<img
-							src={"./src/assets/close.png"}
+							src={"/assets/close.png"}
 							onClick={(e) => {
 								handleExpandToggle(e);
 								console.log("image 클릭");
@@ -121,11 +120,23 @@ export const Project = ({ data, index, current, nextCurrent, prevCurrent, isInte
 								<p>···</p>
 								<div dangerouslySetInnerHTML={{ __html: data.detail || "" }}></div>
 								<div>
-									{/* <h4>기술 선정 이유</h4>
-									생산성을 위해 React, Typescript, Styled-Components를 사용했습니다. css-in-js 방식이 개인적으로 알아보기
-									쉬워 Styled-component를 사용하여 UI작업을 했습니다.
-									<h4>어려운 점</h4>
-									한 페이지에서 모든 컨텐츠를 보여주는 과정이 익숙하지 않아 힘들었 */}
+									{/* <h4>설명</h4>
+									42Seoul에서 주최한 팀 프로젝트에 참여해 개발자를 위한 중고거래 사이트를 제작했습니다.
+									<h4>팀 구성원</h4>
+									프론트엔드 2명, 백엔드 2명으로 구성된 팀이었고, 주로 React와 Spring을 사용했습니다.
+									<h4>기술 선정 이유</h4>
+									우리 팀 구성원들은 모두 첫 프로젝트였기 때문에 리딩 가능한 다른 기술이 없어서 HTML과 JavaScript로 직접
+									개발하는 대신에 React를 경험해보기로 결정했습니다.
+									<h4>담당</h4>
+									1. 프로젝트 배포를 위해 AWS EC2, Route53, 가비아를 사용하여 프로젝트를 배포했습니다.
+									<br />
+									2. 메인 화면 UI, 42OAuth연동, 상품 페이지 UI, fileReader사용해 상품 등록/삭제를 구현했습니다.
+									<h4>어려웠던 점</h4>
+									HTML, CSS, JavaScript의 지식이 부족한 상태에서 React로 개발을 진행하다보니, 간단한 퍼블리싱부터 문제가
+									발생했습니다. 그 후에는 네이버, 다음, 카카오톡, 야후 페이지를 클론 코딩하며 HTML과 CSS를 공부하였습니다.
+									기술 리딩을 받지 않고 진행하여 AWS S3에 이미지를 클라이언트에서 처리하는 과정에서 페이지 전환이 발생하면
+									DB에는 남아있지만 S3에는 올라가지 않는 문제가 발생했습니다. 이후 직접 이 문제를 해결하기 위해 서버에서
+									처리하는 방식을 적용하는 등의 수정 작업으로 시간을 소모하였습니다. */}
 								</div>
 							</DetailInfoSectionStyled>
 							<HashTagSectionStyled>
@@ -135,8 +146,13 @@ export const Project = ({ data, index, current, nextCurrent, prevCurrent, isInte
 							</HashTagSectionStyled>
 							<LinkButton links={data.links} />
 						</InfoSectionStyled>
-						<PrevArrowStyled onClick={nextCurrent} />
-						<NextArrowStyled onClick={prevCurrent} />
+
+						<Scroll to='project' offset={100}>
+							<PrevArrowStyled onClick={prevCurrent} />
+						</Scroll>
+						<Scroll to='project' offset={100}>
+							<NextArrowStyled onClick={nextCurrent} />
+						</Scroll>
 					</ProjectStyled>
 				</AnimationStyled>
 			)}
@@ -171,6 +187,11 @@ const MainImageSectionStyled = styled.section`
 	background-color: rgba(255, 255, 255, 0.25);
 	cursor: pointer;
 	overflow: hidden;
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.25);
+		background-repeat: no-repeat;
+		border: 1px solid white;
+	}
 `;
 
 const HoverIconStyled = styled.img`
@@ -181,11 +202,11 @@ const HoverIconStyled = styled.img`
 	aspect-ratio: 16 / 9;
 	background-color: transparent;
 	&:hover {
-		background-image: url("./src/assets/zoomIn.png");
-		background-color: rgba(255, 255, 255, 0.25);
+		background-image: url("/assets/zoomIn.png");
 		background-repeat: no-repeat;
 		background-size: 30px 30px;
 		background-position: 98% 98%;
+		filter: invert(100%);
 	}
 `;
 
@@ -193,9 +214,6 @@ const MainImageStyled = styled.img`
 	width: 100%;
 	&.animate {
 		animation: ${initAnimation} 0.3s ease-in-out;
-	}
-	&:hover {
-		filter: invert(20%);
 	}
 `;
 
@@ -311,7 +329,7 @@ const arrowCSS = css`
 	height: 80px;
 	filter: invert(90%);
 	cursor: pointer;
-	background: url(${arrowImg}) 50% 50% no-repeat;
+	background: url("/assets/arrow.png") 50% 50% no-repeat;
 	background-size: 80px 80px;
 
 	@media (max-width: ${(props) => `calc(${props.theme.width.section} + 4rem)`}) {
@@ -387,6 +405,7 @@ const DetailButtonStyled = styled.button`
 `;
 
 const DetailInfoSectionStyled = styled.section`
+	animation: ${initAnimation} 1s forwards;
 	margin: 0 auto;
 	background-color: transparent;
 	font-size: 0.9rem;
@@ -397,6 +416,7 @@ const DetailInfoSectionStyled = styled.section`
 	}
 
 	> div {
+		line-height: 1.5rem;
 		h4 {
 			font-size: 1rem;
 			margin-top: 20px;
