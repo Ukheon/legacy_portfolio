@@ -29,7 +29,7 @@ export const PROJECT_DATA = [
 		links: [
 			{
 				image: CHAIN_IMAGE,
-				href: "https://localhost:3000",
+				href: "https://ukheon.github.io/portfolio/",
 			},
 			{
 				image: GITHUB_IMAGE,

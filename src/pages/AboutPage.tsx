@@ -83,14 +83,14 @@ const IntroStyled = styled.div`
 		opacity: 0;
 		animation: ${initAnimation} 1s ease-in-out;
 		animation-fill-mode: forwards;
-		animation-delay: 3s;
+		animation-delay: 1.5s;
 	}
 
 	p:last-child {
 		opacity: 0;
-		animation: ${initAnimation} 2s ease-in-out;
+		animation: ${initAnimation} 1s ease-in-out;
 		animation-fill-mode: forwards;
-		animation-delay: 5s;
+		animation-delay: 2.2s;
 		margin-bottom: 20px;
 	}
 
