@@ -1,6 +1,7 @@
-const YOUTUBE_IMAGE = "/assets/youtube.png";
-const GITHUB_IMAGE = "/assets/github-mark.png";
-const CHAIN_IMAGE = "/assets/chain.png";
+export const BASE_URL = process.env.NODE_ENV === "production" ? "/portfolio" : "";
+const YOUTUBE_IMAGE = BASE_URL + "/assets/youtube.png";
+const GITHUB_IMAGE = BASE_URL + "/assets/github-mark.png";
+const CHAIN_IMAGE = BASE_URL + "/assets/chain.png";
 
 export const PROJECT_DATA = [
 	{
@@ -13,10 +14,17 @@ export const PROJECT_DATA = [
 				<h4>기술 선정 이유</h4>
 				React, Typescript, Styled-Components를 사용한 이유는 생산성을 높이기 위함입니다. 개인적으로 CSS-in-JS
 				방식이 이해하기 쉽다고 판단하여 Styled-Components를 선택하여 UI 작업을 수행했습니다
+				<h4>경험한 이슈</h4>
+				GitHub Pages로 배포하는 과정에서 동일한 base URL을 갖지 않아서 js 및 이미지 파일을 불러올 수 없는 문제가 발생했습니다. 이 문제를 해결하기 위해 base URL을 설정하고, 이미지 파일의 경우 개발 및 배포를 구분하여 해당 이미지를 불러왔습니다.
 				<h4>어려웠던 점</h4>
 				애니메이션 경험이 부족하여 animate와 transition과 관련된 문제가 발생했으며, 반응형 웹을 구축하는
 				과정에서 각 섹션마다 다른 분기점을 설정해야 해서 유지보수가 어려웠습니다.`,
-		imageUrl: ["/assets/portfolio1.png", "/assets/portfolio2.png", "/assets/portfolio3.png", "/assets/portfolio4.png"],
+		imageUrl: [
+			BASE_URL + "/assets/portfolio1.png",
+			BASE_URL + "/assets/portfolio2.png",
+			BASE_URL + "/assets/portfolio3.png",
+			BASE_URL + "/assets/portfolio4.png",
+		],
 		tags: ["React", "Typescript", "Styled-Components", "반응형웹"],
 		links: [
 			{
@@ -47,7 +55,7 @@ export const PROJECT_DATA = [
 				<h4>어려웠던 점</h4>
 				웹 및 앱에서 동작하는 이벤트가 다르다는 점에서 어려움을 겪었습니다. 또한, 마우스와 터치 이벤트로 회전하는 과정에서 클릭 지점부터 이동한 거리만큼 회전시키는 공식을 공부하는 데 많은 시간이 소요되었습니다.
 				`,
-		imageUrl: ["/assets/rotate.png", "/assets/rotate1.png"],
+		imageUrl: [BASE_URL + "/assets/rotate.png", BASE_URL + "/assets/rotate1.png"],
 		tags: ["HTML", "Javascript", "CSS"],
 		links: [
 			{
@@ -80,7 +88,13 @@ export const PROJECT_DATA = [
 				array map 메소드를 사용하는 중 map 콜백함수 인수로 생성되는 currentValue가 수정이 안되는 이슈가 발생하여 새로운 배열을 반환받고 난 후 변경하였습니다.
 				자식요소의 이벤트 발생이 부모요소 이벤트도 불러오는 이슈가 발생하여 stopPropagation을 사용해 이벤트 전파를 중단시켰습니다.
 				`,
-		imageUrl: ["/assets/ukflix1.png", "/assets/ukflix2.png", "/assets/ukflix3.png", "/assets/ukflix4.png", "/assets/ukflix5.png"],
+		imageUrl: [
+			BASE_URL + "/assets/ukflix1.png",
+			BASE_URL + "/assets/ukflix2.png",
+			BASE_URL + "/assets/ukflix3.png",
+			BASE_URL + "/assets/ukflix4.png",
+			BASE_URL + "/assets/ukflix5.png",
+		],
 		tags: ["React", "Typescript", "Styled-Components", "React-query", "Frmaer-motion"],
 		links: [
 			{
@@ -119,7 +133,13 @@ export const PROJECT_DATA = [
 				기술 리딩을 받지 않고 진행했기 때문에 AWS S3에 이미지를 클라이언트에서 처리하는 과정에서 페이지 전환이 발생하면 DB에는 남아있지만
 				S3에는 올라가지 않는 문제가 발생했습니다. 이후에는 이 문제를 직접 해결하기 위해 서버에서 처리하는 방식을 적용하는 등의 수정 작업으로 시간을 소모하였습니다.
 				`,
-		imageUrl: ["/assets/4m2d1.png", "/assets/4m2d2.png", "/assets/4m2d3.png", "/assets/4m2d4.png", "/assets/4m2d5.png"],
+		imageUrl: [
+			BASE_URL + "/assets/4m2d1.png",
+			BASE_URL + "/assets/4m2d2.png",
+			BASE_URL + "/assets/4m2d3.png",
+			BASE_URL + "/assets/4m2d4.png",
+			BASE_URL + "/assets/4m2d5.png",
+		],
 		tags: ["React", "Styled-Components"],
 		links: [
 			{

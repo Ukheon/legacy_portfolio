@@ -38,3 +38,27 @@ export const stackTranslateYAnimation = keyframes`
 		transform: translateY(0);
 	}
 `;
+
+export const prevAnimation = keyframes`
+	0% {
+		transform: rotate(90deg) translateY(0px);
+	}
+	50% {
+		transform: rotate(90deg) translateY(20px);
+	}
+	100% {
+		transform: rotate(90deg) translateY(0px);
+	}
+`;
+
+export const nextAnimation = keyframes`
+	0% {
+		transform: rotate(-90deg) translateY(0px);
+	}
+	50% {
+		transform: rotate(-90deg) translateY(20px);
+	}
+	100% {
+		transform: rotate(-90deg) translateY(0px);
+	}
+`;

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { ILink } from "./Project";
 
 interface IRes {
 	color: string;

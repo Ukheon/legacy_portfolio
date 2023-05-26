@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const useObserver = (id: string) => {
 	const [isIntersection, setIsIntersection] = useState(false);
+	const navigate = useNavigate();
 	useEffect(() => {
 		const section = document.getElementById(id);
 
@@ -9,6 +11,7 @@ export const useObserver = (id: string) => {
 			(entries) => {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
+						navigate("#" + id);
 						setIsIntersection(true);
 					}
 				});

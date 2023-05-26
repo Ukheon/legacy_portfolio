@@ -1,12 +1,13 @@
 import styled, { css } from "styled-components";
 import { Link as Scroll } from "react-scroll";
 import { useState } from "react";
+import { BASE_URL } from "../data/project";
+import { useLocation } from "react-router-dom";
 
 export const Header = () => {
+	const location = useLocation();
 	const [toggle, setToggle] = useState(false);
-
 	const handleMenuButtonClick = () => setToggle(!toggle);
-
 	const closeToggle = () => setToggle(false);
 
 	return (
@@ -17,22 +18,22 @@ export const Header = () => {
 				<ul>
 					<MenuStyled>
 						<Scroll to='about' smooth offset={-100} onClick={closeToggle}>
-							<span>ABOUT</span>
+							<span className={location.hash === "#about" ? "active" : ""}>ABOUT</span>
 						</Scroll>
 					</MenuStyled>
 					<MenuStyled>
 						<Scroll to='project' smooth onClick={closeToggle}>
-							<span>PROJECT</span>
+							<span className={location.hash === "#project" ? "active" : ""}>PROJECT</span>
 						</Scroll>
 					</MenuStyled>
 					<MenuStyled>
 						<Scroll to='stack' smooth onClick={closeToggle}>
-							<span>STACKS</span>
+							<span className={location.hash === "#stack" ? "active" : ""}>STACKS</span>
 						</Scroll>
 					</MenuStyled>
 					<MenuStyled>
 						<Scroll to='contact' smooth onClick={closeToggle}>
-							<span>CONTACT</span>
+							<span className={location.hash === "#contact" ? "active" : ""}>CONTACT</span>
 						</Scroll>
 					</MenuStyled>
 				</ul>
@@ -101,6 +102,11 @@ const MenuStyled = styled.li`
 		padding-bottom: 3px;
 	}
 
+	span.active {
+		border-bottom: 3px solid white;
+		padding-bottom: 3px;
+	}
+
 	@media (max-width: 600px) {
 		margin-left: 0;
 	}
@@ -112,7 +118,7 @@ const MobileMenuButtonCSS = css`
 	width: 32px;
 	top: 0;
 	right: 0;
-	background-image: url("/assets/close.png");
+	background-image: url(${BASE_URL}/assets/close.png);
 	filter: invert(100%);
 	background-size: 20px;
 	margin-right: 2rem;
@@ -122,7 +128,7 @@ const MenuButtonStyled = styled.button<{ toggle: boolean }>`
 	display: none;
 	width: 32px;
 	height: ${(props) => props.theme.height.header};
-	background-image: url("/assets/m_menu_button.svg");
+	background-image: url(${BASE_URL}/assets/m_menu_button.svg);
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: 32px;

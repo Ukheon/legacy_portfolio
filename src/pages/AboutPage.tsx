@@ -5,6 +5,7 @@ import { useObserver } from "@/hooks/useObserver";
 import { initCSS } from "@/styles/CSS";
 import { Typing } from "@/components/Typing";
 import { initAnimation } from "@/styles/animation";
+import { BASE_URL } from "@/data/project";
 
 const gradientAnimation = keyframes`
 	0% {
@@ -27,7 +28,7 @@ export const AboutPage = () => {
 				<Title title='ABOUT' />
 				{isIntersection && (
 					<IntroStyled className='about'>
-						<img src={"/assets/profile3.jpg"}></img>
+						<img src={BASE_URL + "/assets/profile3.jpg"}></img>
 						<div>
 							<h2 id='typing-text'>
 								<Typing typingText='안녕하세요. 프론트엔드 개발자 권욱헌입니다.' />

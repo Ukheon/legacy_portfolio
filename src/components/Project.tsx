@@ -1,58 +1,11 @@
 import styled, { css, keyframes } from "styled-components";
 import { useProjectSet } from "@/hooks/useProjectSet";
 import { LinkButton } from "./LinkButton";
-import { initAnimation, translateYAnimation } from "@/styles/animation";
+import { initAnimation, nextAnimation, prevAnimation, translateYAnimation } from "@/styles/animation";
 import { Link as Scroll } from "react-scroll";
+import { BASE_URL } from "@/data/project";
 
-export interface ILink {
-	href: string;
-	image: string;
-}
-
-interface IProjectData {
-	title: string;
-	subtitle: string;
-	content: string;
-	detail: string | null;
-	imageUrl: string[];
-	tags: string[];
-	links: ILink[];
-}
-
-interface IProps {
-	data: IProjectData;
-	index: number;
-	current: number;
-	nextCurrent: () => void;
-	prevCurrent: () => void;
-	isIntersection: boolean;
-}
-
-const prevAnimation = keyframes`
-	0% {
-		transform: rotate(90deg) translateY(0px);
-	}
-	50% {
-		transform: rotate(90deg) translateY(20px);
-	}
-	100% {
-		transform: rotate(90deg) translateY(0px);
-	}
-`;
-
-const nextAnimation = keyframes`
-	0% {
-		transform: rotate(-90deg) translateY(0px);
-	}
-	50% {
-		transform: rotate(-90deg) translateY(20px);
-	}
-	100% {
-		transform: rotate(-90deg) translateY(0px);
-	}
-`;
-
-export const Project = ({ data, index, current, nextCurrent, prevCurrent, isIntersection }: IProps) => {
+export const Project = ({ data, index, current, nextCurrent, prevCurrent, isIntersection }: IProjectProps) => {
 	const {
 		selectImg,
 		animate,
@@ -70,7 +23,7 @@ export const Project = ({ data, index, current, nextCurrent, prevCurrent, isInte
 				<ExpendSectionStyled onClick={(e) => handleExpandToggle(e)}>
 					<CloseBarStyled onClick={(e) => e.stopPropagation()}>
 						<img
-							src={"/assets/close.png"}
+							src={`${BASE_URL}/assets/close.png`}
 							onClick={(e) => {
 								handleExpandToggle(e);
 							}}
@@ -118,25 +71,6 @@ export const Project = ({ data, index, current, nextCurrent, prevCurrent, isInte
 							<DetailInfoSectionStyled hidden={!showDetail}>
 								<p>···</p>
 								<div dangerouslySetInnerHTML={{ __html: data.detail || "" }}></div>
-								<div>
-									{/* <h4>설명</h4>
-									42Seoul에서 주최한 팀 프로젝트에 참여해 개발자를 위한 중고거래 사이트를 제작했습니다.
-									<h4>팀 구성원</h4>
-									프론트엔드 2명, 백엔드 2명으로 구성된 팀이었고, 주로 React와 Spring을 사용했습니다.
-									<h4>기술 선정 이유</h4>
-									우리 팀 구성원들은 모두 첫 프로젝트였기 때문에 리딩 가능한 다른 기술이 없어서 HTML과 JavaScript로 직접
-									개발하는 대신에 React를 경험해보기로 결정했습니다.
-									<h4>담당</h4>
-									1. 프로젝트 배포를 위해 AWS EC2, Route53, 가비아를 사용하여 프로젝트를 배포했습니다.
-									<br />
-									2. 메인 화면 UI, 42OAuth연동, 상품 페이지 UI, fileReader사용해 상품 등록/삭제를 구현했습니다.
-									<h4>어려웠던 점</h4>
-									HTML, CSS, JavaScript의 지식이 부족한 상태에서 React로 개발을 진행하다보니, 간단한 퍼블리싱부터 문제가
-									발생했습니다. 그 후에는 네이버, 다음, 카카오톡, 야후 페이지를 클론 코딩하며 HTML과 CSS를 공부하였습니다.
-									기술 리딩을 받지 않고 진행하여 AWS S3에 이미지를 클라이언트에서 처리하는 과정에서 페이지 전환이 발생하면
-									DB에는 남아있지만 S3에는 올라가지 않는 문제가 발생했습니다. 이후 직접 이 문제를 해결하기 위해 서버에서
-									처리하는 방식을 적용하는 등의 수정 작업으로 시간을 소모하였습니다. */}
-								</div>
 							</DetailInfoSectionStyled>
 							<HashTagSectionStyled>
 								{data.tags.map((tag, idx) => {
@@ -201,7 +135,7 @@ const HoverIconStyled = styled.img`
 	aspect-ratio: 16 / 9;
 	background-color: transparent;
 	&:hover {
-		background-image: url("/assets/zoomIn.png");
+		background-image: url(${BASE_URL}/assets/zoomIn.png);
 		background-repeat: no-repeat;
 		background-size: 30px 30px;
 		background-position: 98% 98%;
@@ -328,7 +262,7 @@ const arrowCSS = css`
 	height: 80px;
 	filter: invert(90%);
 	cursor: pointer;
-	background: url("/assets/arrow.png") 50% 50% no-repeat;
+	background: url(${BASE_URL}/assets/arrow.png) 50% 50% no-repeat;
 	background-size: 80px 80px;
 
 	@media (max-width: ${(props) => `calc(${props.theme.width.section} + 4rem)`}) {
