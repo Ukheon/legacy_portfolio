@@ -86,7 +86,7 @@ Error generating stack: `+i.message+`
 				<h4>2023.05.01 ~ 2023.05.26</h4>
 				<h4>기술 선정 이유</h4>
 				React, Typescript, Styled-Components를 사용한 이유는 생산성을 높이기 위함입니다. 개인적으로 CSS-in-JS
-				방식이 이해하기 쉽다고 판단하여 Styled-Components를 선택하여 UI 작업을 수행했습니다
+				방식이 이해하기 쉽다고 판단하여 Styled-Components를 선택하여 UI 작업을 수행했습니다.
 				<h4>경험한 이슈</h4>
 				GitHub Pages로 배포하는 과정에서 동일한 base URL을 갖지 않아서 js 및 이미지 파일을 불러올 수 없는 문제가 발생했습니다. 이 문제를 해결하기 위해 base URL을 설정하고, 이미지 파일의 경우 개발 및 배포를 구분하여 해당 이미지를 불러왔습니다.
 				<h4>어려웠던 점</h4>
@@ -124,7 +124,7 @@ Error generating stack: `+i.message+`
 				<h4>설명</h4>
 				42Seoul에서 주최한 팀 프로젝트에 참여해 개발자를 위한 중고거래 사이트를 제작했습니다.
 				<h4>팀 구성원</h4>
-				프론트엔드 2명, 백엔드 2명으로 구성된 팀이었고, 주로 React와 Spring을 사용했습니다.
+				프론트엔드 2명, 백엔드 2명으로 구성된 팀이었고, React와 Spring을 사용했습니다.
 				<h4>기술 선정 이유</h4>
 				우리 팀 구성원들은 모두 첫 프로젝트였기 때문에 리딩 가능한 다른 기술이 없어서 HTML과 JavaScript로 직접
 				개발하는 대신에 React를 경험해보기로 결정했습니다.
@@ -739,7 +739,7 @@ Error generating stack: `+i.message+`
 	padding: 0 25px;
 	background-color: rgba(0, 0, 0, 0.3);
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-	animation: ${Im} 1.5s forwards;
+	animation: ${Im} 1.2s forwards;
 	animation-delay: ${({time:e})=>e};
 `,Ux=W.article`
 	display: flex;
@@ -749,7 +749,7 @@ Error generating stack: `+i.message+`
 	min-height: 130px;
 	flex-flow: wrap;
 	opacity: 0;
-	animation: ${Im} 1.5s forwards;
+	animation: ${Im} 1.2s forwards;
 	animation-delay: ${({time:e})=>e};
 
 	@media (max-width: ${e=>e.theme.responsive.stackArticle}) {
@@ -839,11 +839,11 @@ Error generating stack: `+i.message+`
 		font-size: 0.7rem;
 		margin-top: 5px;
 	}
-`,Wx={frontEnd:{title:"# FRONT_END SKILL",time:"0.5s",content:[{title:"HTML",info:"시멘틱 태그를 이용해 마크업 할 수 있습니다.",image:re+"/assets/html.png"},{title:"CSS",info:"flex, grid를 사용하여 반응형웹을 적용할 수 있습니다.",image:re+"/assets/css3.png"},{title:"JavaScript",info:"ES6 문법에 익숙하고, DOM을 이해하며 SPA를 구축 할 수 있습니다.",image:re+"/assets/js.png"},{title:"TypeScript",info:"Typescript를 경험한 이후 모든 프로젝트에서 사용중이며, 인텔리센스 기능을 활용해 생산성을 높이고 정적타입을 추가하여 유지보수에 신경씁니다.",image:re+"/assets/typescript.png"},{title:"React",info:"범용적이고 재사용 가능한 컴포넌트 설계가 가능합니다. hook, redux를 사용해 상태관리를 할 수 있습니다.",image:re+"/assets/reactjs.png"},{title:"jQuery",info:"DOM 조작하는 메소드에 익숙하며 slick, date-picker 라이브러리를 사용해본 경험이 있습니다.",image:re+"/assets/jquery.png"}]},devOps:{title:"# DEV-OPS SKILL",time:"1s",content:[{title:"Jira",info:"Jira를 사용하여 작업의 우선순위를 관리하고, 이슈를 관리할 수 있습니다.",image:re+"/assets/jira.png"},{title:"Bitbucket",info:"Jira와 함께 사용해 이슈를 연동하고 소스코드를 관리할 수 있습니다.",image:re+"/assets/bitbucket.png"},{title:"AWS",info:"EC2, LightSail 클라우드 서비스를 사용할 수 있으며, CloudFront 서비스를 이용해 글로벌 서비스를 배포했습니다.",image:re+"/assets/aws.png"},{title:"vsCode",info:"ESLint, Prettier 설정을 통해 코딩 컨벤션을 유지하며 sinppets를 사용하여 생산성을 높입니다.",image:re+"/assets/vscode.png"}]}},Vx=()=>{const{isIntersection:e}=da("stack");return C.jsx(Qx,{children:C.jsxs(fa,{id:"stack",height:"90vh",children:[C.jsx(ca,{title:"STACKS"}),C.jsxs(Yx,{hidden:!e,children:[C.jsxs("p",{children:[C.jsx("em",{children:"*"}),"아이콘에 마우스를 올리면 자세한 설명이 나옵니다."]}),C.jsx(Fx,{stackData:Wx})]})]})})},Qx=W.section`
+`,Wx={frontEnd:{title:"# FRONT_END SKILL",time:"0.3s",content:[{title:"HTML",info:"시멘틱 태그를 이용해 마크업 할 수 있습니다.",image:re+"/assets/html.png"},{title:"CSS",info:"flex, grid를 사용하여 반응형웹을 적용할 수 있습니다.",image:re+"/assets/css3.png"},{title:"JavaScript",info:"ES6 문법에 익숙하고, DOM을 이해하며 SPA를 구축 할 수 있습니다.",image:re+"/assets/js.png"},{title:"TypeScript",info:"Typescript를 경험한 이후 모든 프로젝트에서 사용중이며, 인텔리센스 기능을 활용해 생산성을 높이고 정적타입을 추가하여 유지보수에 신경씁니다.",image:re+"/assets/typescript.png"},{title:"React",info:"범용적이고 재사용 가능한 컴포넌트 설계가 가능합니다. hook, redux를 사용해 상태관리를 할 수 있습니다.",image:re+"/assets/reactjs.png"},{title:"jQuery",info:"DOM 조작하는 메소드에 익숙하며 slick, date-picker 라이브러리를 사용해본 경험이 있습니다.",image:re+"/assets/jquery.png"}]},devOps:{title:"# DEV-OPS SKILL",time:"0.6s",content:[{title:"Jira",info:"Jira를 사용하여 작업의 우선순위를 관리하고, 이슈를 관리할 수 있습니다.",image:re+"/assets/jira.png"},{title:"Bitbucket",info:"Jira와 함께 사용해 이슈를 연동하고 소스코드를 관리할 수 있습니다.",image:re+"/assets/bitbucket.png"},{title:"AWS",info:"EC2, LightSail 클라우드 서비스를 사용할 수 있으며, CloudFront 서비스를 이용해 글로벌 서비스를 배포했습니다.",image:re+"/assets/aws.png"},{title:"vsCode",info:"ESLint, Prettier 설정을 통해 코딩 컨벤션을 유지하며 sinppets를 사용하여 생산성을 높입니다.",image:re+"/assets/vscode.png"}]}},Vx=()=>{const{isIntersection:e}=da("stack");return C.jsx(Qx,{children:C.jsxs(fa,{id:"stack",height:"90vh",children:[C.jsx(ca,{title:"STACKS"}),C.jsxs(Yx,{hidden:!e,children:[C.jsxs("p",{children:[C.jsx("em",{children:"*"}),"아이콘에 마우스를 올리면 자세한 설명이 나옵니다."]}),C.jsx(Fx,{stackData:Wx})]})]})})},Qx=W.section`
 	background-image: radial-gradient(rgba(255, 255, 255, 0.1) 2px, transparent 0);
 	background-size: 60px 60px;
 `,Yx=W.section`
-	animation: ${An} 1.5s forwards;
+	animation: ${An} 1s forwards;
 	> p {
 		margin-top: 80px;
 		margin-bottom: 70px;
