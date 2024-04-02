@@ -861,7 +861,7 @@ Error generating stack: `+i.message+`
 `,Kx=()=>C.jsxs(Gx,{children:[C.jsx(AS,{}),C.jsxs(Xx,{children:[C.jsx(ZS,{}),C.jsx(Lx,{}),C.jsx(Vx,{}),C.jsx(Ax,{})]}),C.jsx(Nx,{})]}),Gx=W.div`
 	width: 100%;
 	background: ${e=>e.theme.bgColors.root};
-`,Xx=W.main``,Jx=[{id:0,path:"/",label:"root",element:C.jsx(Kx,{})}],Zx=Ry(Jx.map(e=>({path:e.path,element:e.element})),{basename:"/portfolio"}),qx={width:{mobile:"600px",tablet:"1200px",section:"1100px"},height:{header:"4.5rem"},colors:{},bgColors:{root:"#151515",temp:"#f1f0f5"},margin:{header:"6rem",nav:"1.5rem"},size:{logo:"30px",nav:"16px"},responsive:{stackArticle:"1100px"}},ek=O1`
+`,Xx=W.main``,Jx=[{id:0,path:"/",label:"root",element:C.jsx(Kx,{})}],Zx=Ry(Jx.map(e=>({path:e.path,element:e.element})),{basename:"/legacy_portfolio"}),qx={width:{mobile:"600px",tablet:"1200px",section:"1100px"},height:{header:"4.5rem"},colors:{},bgColors:{root:"#151515",temp:"#f1f0f5"},margin:{header:"6rem",nav:"1.5rem"},size:{logo:"30px",nav:"16px"},responsive:{stackArticle:"1100px"}},ek=O1`
 	* {
 		margin: 0;
 		padding: 0;
