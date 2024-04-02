@@ -86,12 +86,12 @@ Error generating stack: `+i.message+`
 				<h4>2023.05.01 ~ 2023.05.26</h4>
 				<h4>기술 선정 이유</h4>
 				React, Typescript, Styled-Components를 사용한 이유는 생산성을 높이기 위함입니다. 개인적으로 CSS-in-JS
-				방식이 이해하기 쉽다고 판단하여 Styled-Components를 선택하여 UI 작업을 수행했습니다.
+				방식이 이해하기 쉽다고 판단하여 Styled-Components를 선택하여 UI 작업을 수행했습니다
 				<h4>경험한 이슈</h4>
 				GitHub Pages로 배포하는 과정에서 동일한 base URL을 갖지 않아서 js 및 이미지 파일을 불러올 수 없는 문제가 발생했습니다. 이 문제를 해결하기 위해 base URL을 설정하고, 이미지 파일의 경우 개발 및 배포를 구분하여 해당 이미지를 불러왔습니다.
 				<h4>어려웠던 점</h4>
 				애니메이션 경험이 부족하여 animate와 transition과 관련된 문제가 발생했으며, 반응형 웹을 구축하는
-				과정에서 각 섹션마다 다른 분기점을 설정해야 해서 유지보수가 어려웠습니다.`,imageUrl:[re+"/assets/portfolio1.png",re+"/assets/portfolio2.png",re+"/assets/portfolio3.png",re+"/assets/portfolio4.png"],tags:["React","Typescript","Styled-Components","반응형웹"],links:[{image:qa,href:"https://ukheon.github.io/portfolio/"},{image:Pi,href:"https://github.com/Ukheon/portfolio"}]},{title:"회전 네비게이션",subtitle:"개인프로젝트",content:"네이버 그린닷 UI로 네비게이션을 제작했습니다.",detail:`
+				과정에서 각 섹션마다 다른 분기점을 설정해야 해서 유지보수가 어려웠습니다.`,imageUrl:[re+"/assets/portfolio1.png",re+"/assets/portfolio2.png",re+"/assets/portfolio3.png",re+"/assets/portfolio4.png"],tags:["React","Typescript","Styled-Components","반응형웹"],links:[{image:qa,href:"https://localhost:3000"},{image:Pi,href:"https://github.com/Ukheon/portfolio"}]},{title:"회전 네비게이션",subtitle:"개인프로젝트",content:"네이버 그린닷 UI로 네비게이션을 제작했습니다.",detail:`
 				<h4>2023.01.25 ~ 2023.01.31</h4>
 				<h4>설명</h4>
 				네이버 그린닷 UI를 이용한 네비게이션을 구현했습니다.
@@ -124,7 +124,7 @@ Error generating stack: `+i.message+`
 				<h4>설명</h4>
 				42Seoul에서 주최한 팀 프로젝트에 참여해 개발자를 위한 중고거래 사이트를 제작했습니다.
 				<h4>팀 구성원</h4>
-				프론트엔드 2명, 백엔드 2명으로 구성된 팀이었고, React와 Spring을 사용했습니다.
+				프론트엔드 2명, 백엔드 2명으로 구성된 팀이었고, 주로 React와 Spring을 사용했습니다.
 				<h4>기술 선정 이유</h4>
 				우리 팀 구성원들은 모두 첫 프로젝트였기 때문에 리딩 가능한 다른 기술이 없어서 HTML과 JavaScript로 직접
 				개발하는 대신에 React를 경험해보기로 결정했습니다.
@@ -140,7 +140,7 @@ Error generating stack: `+i.message+`
 				커뮤니케이션이 어려웠고, 특정 기능을 구현하기 위해 클라이언트와 서버 중 어느 쪽에서 구현해야 하는지에 대한 기획이 오래 걸렸습니다.
 				기술 리딩을 받지 않고 진행했기 때문에 AWS S3에 이미지를 클라이언트에서 처리하는 과정에서 페이지 전환이 발생하면 DB에는 남아있지만
 				S3에는 올라가지 않는 문제가 발생했습니다. 이후에는 이 문제를 직접 해결하기 위해 서버에서 처리하는 방식을 적용하는 등의 수정 작업으로 시간을 소모하였습니다.
-				`,imageUrl:[re+"/assets/4m2d1.png",re+"/assets/4m2d2.png",re+"/assets/4m2d3.png",re+"/assets/4m2d4.png",re+"/assets/4m2d5.png"],tags:["React","Styled-Components"],links:[{image:IS,href:"https://youtu.be/SUgFXB02Gdw"},{image:Pi,href:"https://github.com/ukhyo/42marketFront"}]}],AS=()=>{const e=lc(),[t,n]=j.useState(!1),r=()=>n(!t),o=()=>n(!1);return console.log(e.hash),C.jsxs(zS,{children:[C.jsx(NS,{children:"Portfolio"}),C.jsxs(DS,{toggle:t,children:[C.jsx(bS,{toggle:t,onClick:r}),C.jsxs("ul",{children:[C.jsx(Ri,{children:C.jsx(kn,{to:"about",smooth:!0,offset:-100,onClick:o,children:C.jsx("span",{className:e.hash==="#about"||e.hash===""?"active":"",children:"ABOUT"})})}),C.jsx(Ri,{children:C.jsx(kn,{to:"project",smooth:!0,onClick:o,children:C.jsx("span",{className:e.hash==="#project"?"active":"",children:"PROJECT"})})}),C.jsx(Ri,{children:C.jsx(kn,{to:"stack",smooth:!0,onClick:o,children:C.jsx("span",{className:e.hash==="#stack"?"active":"",children:"STACKS"})})}),C.jsx(Ri,{children:C.jsx(kn,{to:"contact",smooth:!0,onClick:o,children:C.jsx("span",{className:e.hash==="#contact"?"active":"",children:"CONTACT"})})})]})]})]})},zS=W.header`
+				`,imageUrl:[re+"/assets/4m2d1.png",re+"/assets/4m2d2.png",re+"/assets/4m2d3.png",re+"/assets/4m2d4.png",re+"/assets/4m2d5.png"],tags:["React","Styled-Components"],links:[{image:IS,href:"https://youtu.be/SUgFXB02Gdw"},{image:Pi,href:"https://github.com/ukhyo/42marketFront"}]}],AS=()=>{const e=lc(),[t,n]=j.useState(!1),r=()=>n(!t),o=()=>n(!1);return C.jsxs(zS,{children:[C.jsx(NS,{children:"Portfolio"}),C.jsxs(DS,{toggle:t,children:[C.jsx(bS,{toggle:t,onClick:r}),C.jsxs("ul",{children:[C.jsx(Ri,{children:C.jsx(kn,{to:"about",smooth:!0,offset:-100,onClick:o,children:C.jsx("span",{className:e.hash==="#about"?"active":"",children:"ABOUT"})})}),C.jsx(Ri,{children:C.jsx(kn,{to:"project",smooth:!0,onClick:o,children:C.jsx("span",{className:e.hash==="#project"?"active":"",children:"PROJECT"})})}),C.jsx(Ri,{children:C.jsx(kn,{to:"stack",smooth:!0,onClick:o,children:C.jsx("span",{className:e.hash==="#stack"?"active":"",children:"STACKS"})})}),C.jsx(Ri,{children:C.jsx(kn,{to:"contact",smooth:!0,onClick:o,children:C.jsx("span",{className:e.hash==="#contact"?"active":"",children:"CONTACT"})})})]})]})]})},zS=W.header`
 	position: fixed;
 	top: 0;
 	display: flex;
@@ -308,11 +308,11 @@ Error generating stack: `+i.message+`
 	}
 `,KS=Vr`
 	animation: ${An} 2s ease-in-out;
-`,GS=({typingText:e})=>{const[t,n]=j.useState(""),[r,o]=j.useState(0),i=50;return j.useEffect(()=>{const l=setTimeout(()=>{n(e.substring(0,r+1)),o(r+1)},i);return()=>clearTimeout(l)},[r]),C.jsx(XS,{children:t})},XS=W.span`
+`,GS=({typingText:e})=>{const[t,n]=j.useState(""),[r,o]=j.useState(0),i=100;return j.useEffect(()=>{const l=setTimeout(()=>{n(e.substring(0,r+1)),o(r+1)},i);return()=>clearTimeout(l)},[r]),C.jsx(XS,{children:t})},XS=W.span`
 	border-right: 5px solid transparent;
 	padding-right: 10px;
 
-	animation: ${WS} 1s step-end 6;
+	animation: ${WS} 1s step-end 8;
 `,JS=ir`
 	0% {
 		background-position: 0% 50%;
@@ -355,14 +355,14 @@ Error generating stack: `+i.message+`
 		opacity: 0;
 		animation: ${An} 1s ease-in-out;
 		animation-fill-mode: forwards;
-		animation-delay: 1.5s;
+		animation-delay: 3s;
 	}
 
 	p:last-child {
 		opacity: 0;
-		animation: ${An} 1s ease-in-out;
+		animation: ${An} 2s ease-in-out;
 		animation-fill-mode: forwards;
-		animation-delay: 2.2s;
+		animation-delay: 5s;
 		margin-bottom: 20px;
 	}
 
@@ -410,7 +410,7 @@ Error generating stack: `+i.message+`
 	&:hover {
 		filter: invert(10%);
 	}
-`,ax=({data:e,index:t,current:n,nextCurrent:r,prevCurrent:o,isIntersection:i})=>{const{selectImg:l,animate:a,handleSubImageClick:u,handleAnimationEnd:s,showDetail:f,handleDetailButtonClick:p,expandImageToggle:h,handleExpandToggle:S}=nx();return C.jsxs(C.Fragment,{children:[h?C.jsxs(hx,{onClick:v=>S(v),children:[C.jsx(mx,{onClick:v=>v.stopPropagation(),children:C.jsx("img",{src:`${re}/assets/close.png`,onClick:v=>{S(v)}})}),C.jsx(gx,{onClick:v=>v.stopPropagation(),children:C.jsx("img",{src:e.imageUrl[l]})})]}):"",i&&C.jsx(ux,{children:C.jsxs(sx,{hidden:n!==t,children:[C.jsxs(cx,{children:[C.jsxs(fx,{children:[C.jsx(px,{className:a?"animate":"",src:e.imageUrl[l],alt:"thumbnail",onAnimationEnd:s}),C.jsx(dx,{onClick:S})]}),C.jsx(vx,{children:e.imageUrl.map((v,y)=>C.jsx(yx,{onClick:()=>u(y),active:l===y,children:C.jsx(wx,{src:v})},y))})]}),C.jsxs(kx,{children:[C.jsxs(Ex,{children:[e.title,C.jsx("p",{children:e.subtitle})]}),C.jsxs(Cx,{children:[e.content,e.detail!==""&&C.jsx(Tx,{onClick:p,children:"상세보기"})]}),C.jsxs(Rx,{hidden:!f,children:[C.jsx("p",{children:"···"}),C.jsx("div",{dangerouslySetInnerHTML:{__html:e.detail||""}})]}),C.jsx(_x,{children:e.tags.map((v,y)=>C.jsxs(Px,{children:["#",v]},y))}),C.jsx(ox,{links:e.links})]}),C.jsx(kn,{to:"project",offset:100,children:C.jsx(Sx,{onClick:o})}),C.jsx(kn,{to:"project",offset:100,children:C.jsx(xx,{onClick:r})})]})})]})},ux=W.div`
+`,ax=({data:e,index:t,current:n,nextCurrent:r,prevCurrent:o,isIntersection:i})=>{const{selectImg:l,animate:a,handleSubImageClick:u,handleAnimationEnd:s,showDetail:f,handleDetailButtonClick:p,expandImageToggle:h,handleExpandToggle:S}=nx();return C.jsxs(C.Fragment,{children:[h?C.jsxs(hx,{onClick:v=>S(v),children:[C.jsx(mx,{onClick:v=>v.stopPropagation(),children:C.jsx("img",{src:`${re}/assets/close.png`,onClick:v=>{S(v)}})}),C.jsx(gx,{onClick:v=>v.stopPropagation(),children:C.jsx("img",{src:e.imageUrl[l]})})]}):"",i&&C.jsx(ux,{children:C.jsxs(sx,{hidden:n!==t,children:[C.jsxs(cx,{children:[C.jsxs(fx,{children:[C.jsx(px,{className:a?"animate":"",src:e.imageUrl[l],alt:"thumbnail",onAnimationEnd:s}),C.jsx(dx,{onClick:S})]}),C.jsx(vx,{children:e.imageUrl.map((v,y)=>C.jsx(yx,{onClick:()=>u(y),active:l===y,children:C.jsx(wx,{src:v})},y))})]}),C.jsxs(kx,{children:[C.jsxs(Ex,{children:[e.title,C.jsx("p",{children:e.subtitle})]}),C.jsxs(Cx,{children:[e.content,e.detail!==""&&C.jsx(Tx,{onClick:p,children:"더보기"})]}),C.jsxs(Rx,{hidden:!f,children:[C.jsx("p",{children:"···"}),C.jsx("div",{dangerouslySetInnerHTML:{__html:e.detail||""}})]}),C.jsx(_x,{children:e.tags.map((v,y)=>C.jsxs(Px,{children:["#",v]},y))}),C.jsx(ox,{links:e.links})]}),C.jsx(kn,{to:"project",offset:100,children:C.jsx(Sx,{onClick:o})}),C.jsx(kn,{to:"project",offset:100,children:C.jsx(xx,{onClick:r})})]})})]})},ux=W.div`
 	animation: ${VS} 1s ease-in-out forwards;
 `,sx=W.div`
 	animation: ${An} 0.5s ease-in-out forwards;
@@ -739,7 +739,7 @@ Error generating stack: `+i.message+`
 	padding: 0 25px;
 	background-color: rgba(0, 0, 0, 0.3);
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
-	animation: ${Im} 1.2s forwards;
+	animation: ${Im} 1.5s forwards;
 	animation-delay: ${({time:e})=>e};
 `,Ux=W.article`
 	display: flex;
@@ -749,7 +749,7 @@ Error generating stack: `+i.message+`
 	min-height: 130px;
 	flex-flow: wrap;
 	opacity: 0;
-	animation: ${Im} 1.2s forwards;
+	animation: ${Im} 1.5s forwards;
 	animation-delay: ${({time:e})=>e};
 
 	@media (max-width: ${e=>e.theme.responsive.stackArticle}) {
@@ -839,11 +839,12 @@ Error generating stack: `+i.message+`
 		font-size: 0.7rem;
 		margin-top: 5px;
 	}
-`,Wx={frontEnd:{title:"# FRONT_END SKILL",time:"0.3s",content:[{title:"HTML",info:"시멘틱 태그를 이용해 마크업 할 수 있습니다.",image:re+"/assets/html.png"},{title:"CSS",info:"flex, grid를 사용하여 반응형웹을 적용할 수 있습니다.",image:re+"/assets/css3.png"},{title:"JavaScript",info:"ES6 문법에 익숙하고, DOM을 이해하며 SPA를 구축 할 수 있습니다.",image:re+"/assets/js.png"},{title:"TypeScript",info:"Typescript를 경험한 이후 모든 프로젝트에서 사용중이며, 인텔리센스 기능을 활용해 생산성을 높이고 정적타입을 추가하여 유지보수에 신경씁니다.",image:re+"/assets/typescript.png"},{title:"React",info:"범용적이고 재사용 가능한 컴포넌트 설계가 가능합니다. hook, redux를 사용해 상태관리를 할 수 있습니다.",image:re+"/assets/reactjs.png"},{title:"jQuery",info:"DOM 조작하는 메소드에 익숙하며 slick, date-picker 라이브러리를 사용해본 경험이 있습니다.",image:re+"/assets/jquery.png"}]},devOps:{title:"# DEV-OPS SKILL",time:"0.6s",content:[{title:"Jira",info:"Jira를 사용하여 작업의 우선순위를 관리하고, 이슈를 관리할 수 있습니다.",image:re+"/assets/jira.png"},{title:"Bitbucket",info:"Jira와 함께 사용해 이슈를 연동하고 소스코드를 관리할 수 있습니다.",image:re+"/assets/bitbucket.png"},{title:"AWS",info:"EC2, LightSail 클라우드 서비스를 사용할 수 있으며, CloudFront 서비스를 이용해 글로벌 서비스를 배포했습니다.",image:re+"/assets/aws.png"},{title:"vsCode",info:"ESLint, Prettier 설정을 통해 코딩 컨벤션을 유지하며 sinppets를 사용하여 생산성을 높입니다.",image:re+"/assets/vscode.png"}]}},Vx=()=>{const{isIntersection:e}=da("stack");return C.jsx(Qx,{children:C.jsxs(fa,{id:"stack",height:"90vh",children:[C.jsx(ca,{title:"STACKS"}),C.jsxs(Yx,{hidden:!e,children:[C.jsxs("p",{children:[C.jsx("em",{children:"*"}),"아이콘에 마우스를 올리면 자세한 설명이 나옵니다."]}),C.jsx(Fx,{stackData:Wx})]})]})})},Qx=W.section`
+`,Wx={frontEnd:{title:"# FRONT_END SKILL",time:"0.5s",content:[{title:"HTML",info:"시멘틱 태그를 이용해 마크업 할 수 있습니다.",image:re+"/assets/html.png"},{title:"CSS",info:"flex, grid를 사용하여 반응형웹을 적용할 수 있습니다.",image:re+"/assets/css3.png"},{title:"JavaScript",info:"ES6 문법에 익숙하고, DOM을 이해하며 SPA를 구축 할 수 있습니다.",image:re+"/assets/js.png"},{title:"TypeScript",info:"Typescript를 경험한 이후 모든 프로젝트에서 사용중이며, 인텔리센스 기능을 활용해 생산성을 높이고 정적타입을 추가하여 유지보수에 신경씁니다.",image:re+"/assets/typescript.png"},{title:"React",info:"범용적이고 재사용 가능한 컴포넌트 설계가 가능합니다. hook, redux를 사용해 상태관리를 할 수 있습니다.",image:re+"/assets/reactjs.png"},{title:"jQuery",info:"DOM 조작하는 메소드에 익숙하며 slick, date-picker 라이브러리를 사용해본 경험이 있습니다.",image:re+"/assets/jquery.png"}]},devOps:{title:"# DEV-OPS SKILL",time:"1s",content:[{title:"Jira",info:"Jira를 사용하여 작업의 우선순위를 관리하고, 이슈를 관리할 수 있습니다.",image:re+"/assets/jira.png"},{title:"Bitbucket",info:"Jira와 함께 사용해 이슈를 연동하고 소스코드를 관리할 수 있습니다.",image:re+"/assets/bitbucket.png"},{title:"AWS",info:"EC2, LightSail 클라우드 서비스를 사용할 수 있으며, CloudFront 서비스를 이용해 글로벌 서비스를 배포했습니다.",image:re+"/assets/aws.png"},{title:"vsCode",info:"ESLint, Prettier 설정을 통해 코딩 컨벤션을 유지하며 sinppets를 사용하여 생산성을 높입니다.",image:re+"/assets/vscode.png"}]}},Vx=()=>{const{isIntersection:e}=da("stack");return C.jsx(Qx,{children:C.jsxs(fa,{id:"stack",height:"90vh",children:[C.jsx(ca,{title:"STACKS"}),C.jsxs(Yx,{hidden:!e,children:[C.jsxs("p",{children:[C.jsx("em",{children:"*"}),"아이콘에 마우스를 올리면 자세한 설명이 나옵니다."]}),C.jsx(Fx,{stackData:Wx})]})]})})},Qx=W.section`
 	background-image: radial-gradient(rgba(255, 255, 255, 0.1) 2px, transparent 0);
+
 	background-size: 60px 60px;
 `,Yx=W.section`
-	animation: ${An} 1s forwards;
+	animation: ${An} 1.5s forwards;
 	> p {
 		margin-top: 80px;
 		margin-bottom: 70px;
