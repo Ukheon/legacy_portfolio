@@ -91,7 +91,7 @@ Error generating stack: `+i.message+`
 				GitHub Pages로 배포하는 과정에서 동일한 base URL을 갖지 않아서 js 및 이미지 파일을 불러올 수 없는 문제가 발생했습니다. 이 문제를 해결하기 위해 base URL을 설정하고, 이미지 파일의 경우 개발 및 배포를 구분하여 해당 이미지를 불러왔습니다.
 				<h4>어려웠던 점</h4>
 				애니메이션 경험이 부족하여 animate와 transition과 관련된 문제가 발생했으며, 반응형 웹을 구축하는
-				과정에서 각 섹션마다 다른 분기점을 설정해야 해서 유지보수가 어려웠습니다.`,imageUrl:[re+"/assets/portfolio1.png",re+"/assets/portfolio2.png",re+"/assets/portfolio3.png",re+"/assets/portfolio4.png"],tags:["React","Typescript","Styled-Components","반응형웹"],links:[{image:qa,href:"https://localhost:3000"},{image:Pi,href:"https://github.com/Ukheon/portfolio"}]},{title:"회전 네비게이션",subtitle:"개인프로젝트",content:"네이버 그린닷 UI로 네비게이션을 제작했습니다.",detail:`
+				과정에서 각 섹션마다 다른 분기점을 설정해야 해서 유지보수가 어려웠습니다.`,imageUrl:[re+"/assets/portfolio1.png",re+"/assets/portfolio2.png",re+"/assets/portfolio3.png",re+"/assets/portfolio4.png"],tags:["React","Typescript","Styled-Components","반응형웹"],links:[{image:qa,href:"https://ukheon.github.io/portfolio/"},{image:Pi,href:"https://github.com/Ukheon/portfolio"}]},{title:"회전 네비게이션",subtitle:"개인프로젝트",content:"네이버 그린닷 UI로 네비게이션을 제작했습니다.",detail:`
 				<h4>2023.01.25 ~ 2023.01.31</h4>
 				<h4>설명</h4>
 				네이버 그린닷 UI를 이용한 네비게이션을 구현했습니다.
@@ -308,11 +308,11 @@ Error generating stack: `+i.message+`
 	}
 `,KS=Vr`
 	animation: ${An} 2s ease-in-out;
-`,GS=({typingText:e})=>{const[t,n]=j.useState(""),[r,o]=j.useState(0),i=100;return j.useEffect(()=>{const l=setTimeout(()=>{n(e.substring(0,r+1)),o(r+1)},i);return()=>clearTimeout(l)},[r]),C.jsx(XS,{children:t})},XS=W.span`
+`,GS=({typingText:e})=>{const[t,n]=j.useState(""),[r,o]=j.useState(0),i=50;return j.useEffect(()=>{const l=setTimeout(()=>{n(e.substring(0,r+1)),o(r+1)},i);return()=>clearTimeout(l)},[r]),C.jsx(XS,{children:t})},XS=W.span`
 	border-right: 5px solid transparent;
 	padding-right: 10px;
 
-	animation: ${WS} 1s step-end 8;
+	animation: ${WS} 1s step-end 6;
 `,JS=ir`
 	0% {
 		background-position: 0% 50%;
@@ -355,14 +355,14 @@ Error generating stack: `+i.message+`
 		opacity: 0;
 		animation: ${An} 1s ease-in-out;
 		animation-fill-mode: forwards;
-		animation-delay: 3s;
+		animation-delay: 1.5s;
 	}
 
 	p:last-child {
 		opacity: 0;
-		animation: ${An} 2s ease-in-out;
+		animation: ${An} 1s ease-in-out;
 		animation-fill-mode: forwards;
-		animation-delay: 5s;
+		animation-delay: 2.2s;
 		margin-bottom: 20px;
 	}
 
